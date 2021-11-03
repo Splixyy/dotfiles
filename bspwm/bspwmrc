@@ -1,17 +1,17 @@
 #! /bin/sh
-
+xsetroot -cursor_name left_ptr &
 #Autostart
 pgrep -x sxhkd > /dev/null || sxhkd &
 picom --experimental-backends &
-#nitrogen --restore &
-feh --bg-fill $HOME/Pictures/sunset5.jpg &
+nitrogen --restore &
+#feh --bg-fill home/julian/Pictures/wallhaven-8o3o7k.jpg &
 $HOME/.config/polybar/launch.sh
 
 #Workspaces
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d I II III IV V VI
 
 bspc config border_width         0
-bspc config window_gap          16
+bspc config window_gap          5
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
@@ -20,4 +20,3 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
-
